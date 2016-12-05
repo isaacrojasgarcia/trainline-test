@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadJourney } from '../actions';
+import Journey from '../components/Journey';
 
 class JourneyContainer extends Component {
   constructor(props) {
@@ -9,8 +10,9 @@ class JourneyContainer extends Component {
   }
 
   render() {
+    const props = this.props;
     return (
-      <div>Journey Container</div>
+      <Journey { ...props }  />
     );
   }
 }
