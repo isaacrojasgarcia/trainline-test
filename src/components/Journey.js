@@ -26,8 +26,8 @@ export default class Journey extends Component {
     const { origin, destination } = this.props;
     return (
       <div>
-        <div>{ origin }</div>
-        <div>To { destination }</div>
+        <div className='origin'>{ origin }</div>
+        <div className='destination'>To { destination }</div>
         <div>Operated by Thameslink</div>
         { this._renderJourney() }
       </div>
