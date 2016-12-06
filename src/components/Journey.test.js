@@ -4,7 +4,6 @@ import Point from './Point';
 import journey from '../../data/ldb.json';
 import { shallow } from 'enzyme';
 
-
 function setup() {
   const attrs = {
     origin: 'Farringdon',
@@ -21,7 +20,6 @@ function setup() {
     destination: component.find('.destination'),
     points: component.find(Point)
   }
-
 }
 
 describe('Jouney Component', () => {
@@ -39,5 +37,5 @@ describe('Jouney Component', () => {
     const { points } = setup();
 
     expect(points.length).toEqual(journey.data.callingPoints.length);
-  })
+  });
 });

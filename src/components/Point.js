@@ -17,12 +17,10 @@ export default class Point extends Component {
     const { point } = this.props;
     const estimatedAt = point.estimatedAt;
 
-    console.log('==>', estimatedAt === onTime)
-
     return (
-      <div>
+      <div className="point-status">
       {
-        (estimatedAt === onTime ? '' : (point.hasDeparted ? 'Dept.' : 'Exp.') )+ estimatedAt
+        (estimatedAt === onTime ? '' : (point.hasDeparted ? 'Dept. ' : 'Exp. ') )+ estimatedAt
       }
       </div>
     );
