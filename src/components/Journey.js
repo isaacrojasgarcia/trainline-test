@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import Point from './Point';
 
 export default class Journey extends Component {
   _renderJourney() {
     const { journey } = this.props;
     if(journey && journey.data) {
+      const callingPoints = journey.data.callingPoints;
       return (
-        <div> { journey.data.checkedAt}</div>
+        <div>
+          <div> { journey.data.checkedAt }</div>
+          {
+            callingPoints.map((point, index) => {
+              return <Point point={ point } key={ index }/>
+            })
+          }
+        </div>
       );
     }
     else {
@@ -17,9 +26,10 @@ export default class Journey extends Component {
     const { origin, destination } = this.props;
     return (
       <div>
-        <div>Origin; { origin }</div>
-        <div>Destination; { destination }</div>
-        <div>{ this._renderJourney() }</div>
+        <div>{ origin }</div>
+        <div>To { destination }</div>
+        <div>Operated by Thameslink</div>
+        { this._renderJourney() }
       </div>
     );
   }

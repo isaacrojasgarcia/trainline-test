@@ -1,6 +1,6 @@
 import journey from '../../data/ldb.json';
 
-const latency = 200;
+const latency = 2000;
 
 class connection {
   static request({ method, data }) {
