@@ -12,7 +12,7 @@ class JourneyContainer extends Component {
   render() {
     const props = this.props;
     return (
-      <Journey { ...props }  />
+      <Journey { ...props }  />  
     );
   }
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { point as styles } from '../styles';
 
 const onTime = 'On time';
 
@@ -7,10 +6,20 @@ export default class Point extends Component {
   _renderStationStatus() {
     const { point } = this.props;
     if(point.isTrainHere) {
-        return(<div>Train here</div>);
+        return(
+          <div>
+            <span className='fa-stack fa-lg green'>
+              <i className='fa fa-circle fa-stack-2x'></i>
+              <i className='fa fa-train fa-stack-1x fa-inverse'></i>
+            </span>
+          </div>);
     }
 
-    return(<div></div>);
+    return(
+      <div className={ point.hasDeparted && !(point.isOrigin || point.isDestination) ? '' : 'black' }>
+        <i className='fa fa-circle'></i>
+      </div>
+    );
   }
 
   _renderStation() {
@@ -18,7 +27,7 @@ export default class Point extends Component {
     const estimatedAt = point.estimatedAt;
 
     return (
-      <div className="point-status">
+      <div className='time'>
       {
         (estimatedAt === onTime ? '' : (point.hasDeparted ? 'Dept. ' : 'Exp. ') )+ estimatedAt
       }
@@ -28,18 +37,20 @@ export default class Point extends Component {
 
   render() {
     const { point } = this.props;
-    const departedStyles = point.hasDeparted ? {} : styles.departed;
+    const css = 'w3-row ' + (point.hasDeparted ? '' : 'point-not-departed');
 
     return (
-      <div style={ styles.container }>
-        <div style={ { ...styles.schedule, ...departedStyles } }> { point.scheduledAt } </div>
+      <div className={ css }>
+        <div className='point-scheduled w3-col s3 w3-center'>
+          <b>{ point.scheduledAt } </b>
+        </div>
 
-        <div style={ styles.pointStatus}>
+        <div className='point-status w3-col s3 w3-center'>
           { this._renderStationStatus() }
         </div>
 
-        <div style={ styles.station }>
-          <div style={ departedStyles } > { point.station } </div>
+        <div className='point-station w3-col s6'>
+          <div><b>{ point.station } </b></div>
           { this._renderStation() }
         </div>
       </div>

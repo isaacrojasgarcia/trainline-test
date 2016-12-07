@@ -4,7 +4,7 @@
 - Clone repo: `$ git clone https://github.com/trepafi/trainline-test`
 - Install dependencies `$ npm i`
 - Start server `$ npm start`
-- Run tests `$ npm tests`
+- Run tests `$ npm test`
 
 ## TODO
 - [ ] Add tests for reducers

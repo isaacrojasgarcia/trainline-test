@@ -16,8 +16,8 @@ function setup() {
   return {
     component,
     attrs,
-    origin: component.find('.origin'),
-    destination: component.find('.destination'),
+    origin: component.find('.journey-origin'),
+    destination: component.find('.journey-destination'),
     points: component.find(Point)
   }
 }

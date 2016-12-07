@@ -1,0 +1,67 @@
+@import url("http://www.w3schools.com/lib/w3.css");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body {
+  font-family: 'Helvetica'
+}
+
+.point-status {
+  color: gray;
+}
+
+.journey {
+  margin-top: 10px;
+}
+
+.journey-origin {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.journey-destination {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.journey-destination span {
+  font-size: 16px;
+  font-weight: normal;
+  color: gray;
+}
+
+.journey-operator {
+  font-size: 14px;
+  font-weight: bold;
+  color: gray;
+}
+
+.points-container {
+  margin-top: 10px;
+  color: gray;
+}
+
+.point-station .time {
+  font-size: 14px;
+}
+
+.point-not-departed .point-scheduled,
+.point-not-departed .point-station b {
+  color: #000;
+}
+
+.train-logo {
+  text-align: right;
+  padding: 15px;
+}
+
+.green {
+  color: green;
+}
+
+.gray {
+  color: gray;
+}
+
+.black {
+  color: black;
+}
