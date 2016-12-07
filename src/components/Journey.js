@@ -17,23 +17,31 @@ export default class Journey extends Component {
       );
     }
     else {
-      return (<div>Loading</div>);
+      return (
+        <div className='w3-row w3-center'>
+          <i className='fa fa-spinner fa-spin fa-3x fa-fw' />
+          <span className='sr-only'>Loading...</span>
+        </div>);
     }
   }
 
   render() {
     const { origin, destination } = this.props;
     return (
-      <div className='journey w3-row'>
-        <div className='w3-col s3 train-logo'>
-          <i className='fa fa-train fa-3x' aria-hidden='true'></i>
+      <div className='journey'>
+        <div className='w3-row'>
+          <div className='w3-col s3 train-logo'>
+            <i className='fa fa-train fa-3x' aria-hidden='true'></i>
+          </div>
+          <div className='w3-col s9'>
+            <div className='journey-origin'>{ origin }</div>
+            <div className='journey-destination'><span>to </span>{ destination }</div>
+            <div className='journey-operator'>Operated by Thameslink</div>
+          </div>
         </div>
-        <div className='w3-col s9'>
-          <div className='journey-origin'>{ origin }</div>
-          <div className='journey-destination'><span>to </span>{ destination }</div>
-          <div className='journey-operator'>Operated by Thameslink</div>
+        <div className='w3-row'>
+          { this._renderJourney() }
         </div>
-        { this._renderJourney() }
       </div>
     );
   }

@@ -1,6 +1,11 @@
 import journey from '../../data/ldb.json';
 
-const latency = 100;
+const latency = (() => {
+  const max = 20;
+  const min = 5;
+
+  return (Math.random() * (max - min) + min) * 100;
+})();
 
 class connection {
   static request({ method, data }) {
